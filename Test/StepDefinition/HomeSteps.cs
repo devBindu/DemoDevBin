@@ -53,6 +53,27 @@ namespace Test
         }
 
 
-       
+        [When(@"I enter an invalid city name as (.*)")]
+        public void WhenIEnterAnInvalidCityName(string cityName)
+        {
+            IWebElement cityTxt = driver.FindElement(By.XPath("(//*[@id='q'])[2]"));
+            cityTxt.Clear();
+            cityTxt.SendKeys(cityName);
+        }
+
+
+        [Then(@"after clicking on Search, an error message should be displayed as (.*)")]
+        public void ThenAfterClickingOnSearchAnErrorMessageShouldBeDisplayedAsNotFound(string message)
+        {
+            IWebElement searchBtn = driver.FindElement(By.XPath("//*[@id='searchform']/button"));
+            searchBtn.Click();
+
+
+            IWebElement messageTxt = driver.FindElement(By.XPath("//*[@id='forecast_list_ul']/div[contains(text(),'"+ message + "')]"));
+
+        }
+
+
+
     }
 }

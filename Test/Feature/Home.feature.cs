@@ -32,8 +32,7 @@ namespace Test.Feature
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test1", "In order to avoid silly mistakes\r\nAs a math idiot\r\nI want to be told the sum of t" +
-                    "wo numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test1", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -67,17 +66,17 @@ namespace Test.Feature
         
         public virtual void FeatureBackground()
         {
-#line 6
-#line 7
+#line 4
+#line 5
 testRunner.And("I Launch the browser to access the URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add two numbers")]
+        [NUnit.Framework.DescriptionAttribute("Verify Home screen label and other details")]
         [NUnit.Framework.CategoryAttribute("mytag")]
         [NUnit.Framework.TestCaseAttribute("Weather;Maps;Guide;API;Price;Partners;Stations;Widgets;Blog", null)]
-        public virtual void AddTwoNumbers(string menuList, string[] exampleTags)
+        public virtual void VerifyHomeScreenLabelAndOtherDetails(string menuList, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -85,18 +84,37 @@ testRunner.And("I Launch the browser to access the URL", ((string)(null)), ((Tec
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", @__tags);
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Home screen label and other details", @__tags);
+#line 8
 this.ScenarioSetup(scenarioInfo);
-#line 6
+#line 4
 this.FeatureBackground();
-#line 11
+#line 9
 testRunner.Then("I should be able to see the landing page with the logo OpenWeather", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 12
+#line 10
 testRunner.And("I should few links like Support Center, Weather in your city, Sign In and Sign Up" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
+#line 11
 testRunner.And(string.Format("I should see the menu {0}", menuList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify invalid scenario")]
+        [NUnit.Framework.CategoryAttribute("invalidScenario")]
+        public virtual void VerifyInvalidScenario()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify invalid scenario", new string[] {
+                        "invalidScenario"});
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 20
+testRunner.When("I enter an invalid city name as Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+testRunner.Then("after clicking on Search, an error message should be displayed as Not found", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
