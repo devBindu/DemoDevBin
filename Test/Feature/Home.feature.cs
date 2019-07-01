@@ -25,7 +25,7 @@ namespace Test.Feature
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Test1.feature"
+#line 1 "Home.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]

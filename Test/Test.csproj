@@ -92,20 +92,20 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Feature\Test1.feature.cs">
+    <Compile Include="Feature\Home.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Test1.feature</DependentUpon>
+      <DependentUpon>Home.feature</DependentUpon>
     </Compile>
-    <Compile Include="StepDefinition\Test1Steps.cs" />
+    <Compile Include="StepDefinition\HomeSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ObjectRepository\Object.json" />
     <None Include="packages.config" />
-    <None Include="Feature\Test1.feature">
+    <None Include="Feature\Home.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Test1.feature.cs</LastGenOutput>
+      <LastGenOutput>Home.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
