@@ -12,7 +12,8 @@ using Test.StepDefinition;
 
 namespace Test
 {
-     
+    
+    
 
     [Binding]
     public class Test1Steps
@@ -50,6 +51,8 @@ namespace Test
                     menuList.Add(option);
                 }
             }
+            driver.Quit();
+
         }
 
 
@@ -80,6 +83,8 @@ namespace Test
 
             Thread.Sleep(2000);
             IWebElement messageTxt = driver.FindElement(By.XPath("//*[@id='forecast_list_ul']/div"));
+
+            driver.Quit();
 
         }
 
@@ -115,6 +120,7 @@ namespace Test
             {
                 Console.WriteLine("Co-ordinate matches");
             }
+            driver.Quit();
         }
 
 

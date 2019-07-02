@@ -9,11 +9,12 @@ using TechTalk.SpecFlow;
 
 namespace Test.StepDefinition
 {
-    class Hooks
+    public sealed class Hooks
     {
-        IWebDriver driver = new ChromeDriver();
-        [Before]
-        public void BeforeScenario()
+        private IWebDriver driver;
+       
+        [AfterScenario]
+        public void AfterScenario()
         {
             driver.Quit();
         }

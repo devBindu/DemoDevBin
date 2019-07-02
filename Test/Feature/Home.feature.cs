@@ -19,8 +19,8 @@ namespace Test.Feature
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Test1")]
-    public partial class Test1Feature
+    [NUnit.Framework.DescriptionAttribute("Landing page verification")]
+    public partial class LandingPageVerificationFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -32,7 +32,7 @@ namespace Test.Feature
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test1", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Landing page verification", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,12 +74,12 @@ testRunner.And("I Launch the browser to access the URL", ((string)(null)), ((Tec
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Home screen label and other details")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.TestCaseAttribute("Weather;Maps;Guide;API;Price;Partners;Stations;Widgets;Blog", null)]
         public virtual void VerifyHomeScreenLabelAndOtherDetails(string menuList, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "mytag"};
+                    "Smoke"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -102,11 +102,11 @@ testRunner.And(string.Format("I should see the menu {0}", menuList), ((string)(n
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify invalid scenario")]
-        [NUnit.Framework.CategoryAttribute("invalidScenario")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void VerifyInvalidScenario()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify invalid scenario", new string[] {
-                        "invalidScenario"});
+                        "Smoke"});
 #line 19
 this.ScenarioSetup(scenarioInfo);
 #line 4
@@ -121,11 +121,11 @@ testRunner.Then("after clicking on Search, an error message should be displayed 
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify valid scenario with city name")]
-        [NUnit.Framework.CategoryAttribute("validScenario")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void VerifyValidScenarioWithCityName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify valid scenario with city name", new string[] {
-                        "validScenario"});
+                        "Smoke"});
 #line 26
 this.ScenarioSetup(scenarioInfo);
 #line 4

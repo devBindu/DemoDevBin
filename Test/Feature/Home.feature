@@ -1,10 +1,10 @@
-﻿Feature: Test1
+﻿Feature: Landing page verification
 	
 
 Background:
 And I Launch the browser to access the URL 
 
-@mytag
+@Smoke
 Scenario Outline: Verify Home screen label and other details
 Then I should be able to see the landing page with the logo OpenWeather
 And I should few links like Support Center, Weather in your city, Sign In and Sign Up
@@ -15,14 +15,14 @@ Examples:
 | Weather;Maps;Guide;API;Price;Partners;Stations;Widgets;Blog |
 
 
-@invalidScenario
+@Smoke
 Scenario: Verify invalid scenario
 When I enter an invalid city name as Test
 Then after clicking on Search, an error message should be displayed as Not found
 
 
 
-@validScenario
+@Smoke
 Scenario: Verify valid scenario with city name
 When I enter an invalid city name as Mumbai
 Then after clicking on Search,  Mumbai, IN should be displayed
