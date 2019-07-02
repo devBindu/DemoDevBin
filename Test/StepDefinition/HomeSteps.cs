@@ -1,33 +1,23 @@
 ﻿using System;
 using TechTalk.SpecFlow;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System.Collections.Generic;
 using System.Threading;
-//using OpenQA.Selenium.Support.UI;
-using System.Timers;
-using OpenQA.Selenium.Support.UI;
-//using OpenQA.Selenium.Support.UI.ExpectedConditions;
-using Test.StepDefinition;
 
-namespace Test
+
+namespace Weather
 {
     
-    
-
     [Binding]
-    public class Test1Steps
+    public class HomeSteps : StepDefinition.Hooks
     {
-        IWebDriver driver = new ChromeDriver();
 
 
         [Given(@"I Launch the browser to access the URL")]
         public void GivenILaunchTheBrowserToAccessTheURL()
         {
-            //IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://openweathermap.org/");
-            driver.Manage().Window.Maximize();
-            //driver.Manage().Timeouts(10, timeun);
+            driver.Manage().Window.Maximize();          
 
         }
 
@@ -35,8 +25,7 @@ namespace Test
         [Then(@"I should be able to see the landing page with the logo OpenWeather")]
         public void ThenIShouldBeAbleToSeeTheLandingPageWithTheTitleOpenWeather()
         {
-            IWebElement logo = driver.FindElement(By.XPath("//*[@id='undefined-sticky-wrapper']/div/div/div/div[1]/a/img"));
-            Console.WriteLine("Logo found for OpenWeather");
+            homepage.verifyLogo();
         }
 
 
@@ -51,8 +40,7 @@ namespace Test
                     menuList.Add(option);
                 }
             }
-            driver.Quit();
-
+          
         }
 
 
@@ -84,8 +72,7 @@ namespace Test
             Thread.Sleep(2000);
             IWebElement messageTxt = driver.FindElement(By.XPath("//*[@id='forecast_list_ul']/div"));
 
-            driver.Quit();
-
+            
         }
 
         [Then(@"after clicking on Search,  (.*) should be displayed")]
@@ -120,7 +107,7 @@ namespace Test
             {
                 Console.WriteLine("Co-ordinate matches");
             }
-            driver.Quit();
+           
         }
 
 

@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
-namespace Test.StepDefinition
+namespace Weather.StepDefinition
 {
-    public sealed class Hooks
+    public class Hooks
     {
-        private IWebDriver driver;
-       
+        public IWebDriver driver;
+        public PageObject.HomePage homepage;
+        [BeforeScenario]
+
+        public void setUp()
+        {
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+
+
+            homepage = new PageObject.HomePage();
+            PageFactory.InitElements(driver, homepage);
+        }
+
         [AfterScenario]
         public void AfterScenario()
         {
-            driver.Quit();
+           driver.Quit();
         }
 
 
