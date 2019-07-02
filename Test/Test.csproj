@@ -98,6 +98,7 @@
       <DependentUpon>Home.feature</DependentUpon>
     </Compile>
     <Compile Include="StepDefinition\HomeSteps.cs" />
+    <Compile Include="StepDefinition\Hooks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

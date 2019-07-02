@@ -20,3 +20,12 @@ Scenario: Verify invalid scenario
 When I enter an invalid city name as Test
 Then after clicking on Search, an error message should be displayed as Not found
 
+
+
+@validScenario
+Scenario: Verify valid scenario with city name
+When I enter an invalid city name as Mumbai
+Then after clicking on Search,  Mumbai, IN should be displayed
+And I should be able to see the description as  light rain
+And I should also see the temperature and coordinates as [19.0144, 72.8479]
+

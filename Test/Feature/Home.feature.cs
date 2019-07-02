@@ -118,6 +118,29 @@ testRunner.Then("after clicking on Search, an error message should be displayed 
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify valid scenario with city name")]
+        [NUnit.Framework.CategoryAttribute("validScenario")]
+        public virtual void VerifyValidScenarioWithCityName()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify valid scenario with city name", new string[] {
+                        "validScenario"});
+#line 26
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 27
+testRunner.When("I enter an invalid city name as Mumbai", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+testRunner.Then("after clicking on Search,  Mumbai, IN should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 29
+testRunner.And("I should be able to see the description as  light rain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+testRunner.And("I should also see the temperature and coordinates as [19.0144, 72.8479]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
