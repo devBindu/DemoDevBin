@@ -13,7 +13,7 @@ namespace Weather
     {
 
 
-        [Given(@"I Launch the browser to access the URL")]
+        [Given(@"I Launch the browser to access the OpenWeather URL")]
         public void GivenILaunchTheBrowserToAccessTheURL()
         {
             driver.Navigate().GoToUrl("https://openweathermap.org/");
@@ -22,8 +22,8 @@ namespace Weather
         }
 
 
-        [Then(@"I should be able to see the landing page with the logo OpenWeather")]
-        public void ThenIShouldBeAbleToSeeTheLandingPageWithTheTitleOpenWeather()
+        [Then(@"I should be able to see home page with the logo OpenWeather")]
+        public void ThenIShouldBeAbleToSeeHomePageWithTheLogoOpenWeather()
         {
             homepage.verifyLogo();
         }
@@ -51,10 +51,20 @@ namespace Weather
             IWebElement weatherLnk = driver.FindElement(By.XPath("//div[1]/div/div/div[1]/a[contains(.,'" + weather + "')]"));
             IWebElement signinLnk = driver.FindElement(By.XPath("//div[1]/div/div/div[1]/a[contains(.,'" + signin + "')]"));
             IWebElement signupLnk = driver.FindElement(By.XPath("//div[1]/div/div/div[1]/a[contains(.,'" + signup + "')]"));
+
+            if(supportCenterLnk.Text.Equals(supportCenter) || weatherLnk.Text.Equals(weather) || signinLnk.Text.Equals(signin) || signupLnk.Text.Equals(signup))
+            {
+                Console.WriteLine("Links available on home page");
+            }
+            else
+            {
+                Console.WriteLine("Links unavailable on home page");
+            }
+
         }
 
 
-        [When(@"I enter an invalid city name as (.*)")]
+        [When(@"I enter the city name as (.*)")]
         public void WhenIEnterAnInvalidCityName(string cityName)
         {
             IWebElement cityTxt = driver.FindElement(By.XPath("(//*[@id='q'])[2]"));
@@ -66,18 +76,14 @@ namespace Weather
         [Then(@"after clicking on Search, an error message should be displayed as Not found")]
         public void ThenAfterClickingOnSearchAnErrorMessageShouldBeDisplayedAsNotFound()
         {
-            IWebElement searchBtn = driver.FindElement(By.XPath("//*[@id='searchform']/button"));
-            searchBtn.Click();
-
-            Thread.Sleep(2000);
-            IWebElement messageTxt = driver.FindElement(By.XPath("//*[@id='forecast_list_ul']/div"));
-
+            homepage.verifyErrorMessage();
             
         }
 
         [Then(@"after clicking on Search,  (.*) should be displayed")]
         public void ThenAfterClickingOnSearchShouldBeDisplayed(string cityInfo)
         {
+            
             IWebElement searchBtn = driver.FindElement(By.XPath("//*[@id='searchform']/button"));
             searchBtn.Click();
 
@@ -92,6 +98,7 @@ namespace Weather
         {
             Thread.Sleep(2000);
             IWebElement descTxt = driver.FindElement(By.XPath("//b[2]/i[contains(text(),' "+desc+"')]"));
+            homepage.verifyDescription(desc);
         }
 
 
@@ -102,12 +109,18 @@ namespace Weather
             Thread.Sleep(2000);
             IWebElement tempTxt = driver.FindElement(By.XPath("//*[@id='forecast_list_ul']/table/tbody/tr/td[2]/p[1]/span"));
             Thread.Sleep(2000);
-            IWebElement coordTxt = driver.FindElement(By.XPath("//p[2]/a[contains(.,'"+ coord + "')]"));
-            if(coord.Equals(coordTxt))
+            IWebElement coordTxt = driver.FindElement(By.XPath("//p[2]/a[contains(.,'" + coord + "')]"));
+
+            if (coord.Equals(coordTxt.Text))
             {
                 Console.WriteLine("Co-ordinate matches");
             }
-           
+            else {
+                Console.WriteLine("Co-ordinate does not match");
+            }
+
+
+
         }
 
 

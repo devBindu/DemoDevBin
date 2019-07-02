@@ -68,7 +68,7 @@ namespace Test.Feature
         {
 #line 4
 #line 5
-testRunner.And("I Launch the browser to access the URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I Launch the browser to access the OpenWeather URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -90,7 +90,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 9
-testRunner.Then("I should be able to see the landing page with the logo OpenWeather", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I should be able to see home page with the logo OpenWeather", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
 testRunner.And("I should few links like Support Center, Weather in your city, Sign In and Sign Up" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -112,7 +112,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 20
-testRunner.When("I enter an invalid city name as Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I enter the city name as Test", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
 testRunner.Then("after clicking on Search, an error message should be displayed as Not found", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -131,11 +131,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 27
-testRunner.When("I enter an invalid city name as Mumbai", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I enter the city name as Mumbai", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
 testRunner.Then("after clicking on Search,  Mumbai, IN should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
-testRunner.And("I should be able to see the description as  light rain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I should be able to see the description as  shower rain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
 testRunner.And("I should also see the temperature and coordinates as [19.0144, 72.8479]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
